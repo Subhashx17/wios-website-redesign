@@ -6,15 +6,12 @@ import { useScrolled } from '../../hooks/useScrollPosition.js';
 import { site } from '../../data/site.js';
 import Button from '../ui/Button.jsx';
 
-const pageLinks = [
-  { label: 'Events', to: '/events' },
-  { label: 'Open Source', to: '/projects' },
-  { label: 'Team', to: '/team' },
-];
-
-const homeAnchors = [
-  { label: 'About', to: '/#about' },
-  { label: 'What We Do', to: '/#what-we-do' },
+const navLinks = [
+  { label: 'About', to: '#about' },
+  { label: 'What We Do', to: '#what-we-do' },
+  { label: 'Events', to: '#events' },
+  { label: 'Open Source', to: '#open-source' },
+  { label: 'Team', to: '#team' },
 ];
 
 export default function Navbar() {
@@ -53,28 +50,15 @@ export default function Navbar() {
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">
-          {homeAnchors.map((link) => (
-            <a
-              key={link.label}
+          {navLinks.map((link) => (
+      	    <a
+   	      key={link.label}
               href={link.to}
               className="text-sm text-paper/70 transition-colors hover:text-paper"
             >
-              {link.label}
-            </a>
-          ))}
-          {pageLinks.map((link) => (
-            <NavLink
-              key={link.label}
-              to={link.to}
-              className={({ isActive }) =>
-                `text-sm transition-colors hover:text-paper ${
-                  isActive ? 'text-paper' : 'text-paper/70'
-                }`
-              }
-            >
-              {link.label}
-            </NavLink>
-          ))}
+  	       {link.label}
+ 	    </a>
+	  ))}
         </div>
 
         <div className="hidden items-center gap-4 md:flex">
@@ -113,7 +97,7 @@ export default function Navbar() {
             className="overflow-hidden border-t border-line bg-ink md:hidden"
           >
             <div className="container-editorial flex flex-col py-2">
-              {[...homeAnchors, ...pageLinks].map((link, i) => (
+              {navLinks.map((link, i) => (
                 <a
                   key={link.label}
                   href={link.to}

@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
 import Navbar from './components/layout/Navbar.jsx';
 import Footer from './components/layout/Footer.jsx';
 import Home from './pages/Home.jsx';
@@ -14,11 +15,66 @@ function ScrollToTop() {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    if (hash) return; // let anchor navigation / smooth-scroll handle this
+    if (hash) {
+      let frame;
+      let attempts = 0;
+
+      const scrollToAnchor = () => {
+        const element = document.getElementById(hash.slice(1));
+
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          return;
+        }
+
+        if (attempts < 60) {
+          attempts += 1;
+          frame = requestAnimationFrame(scrollToAnchor);
+        }
+      };
+
+      frame = requestAnimationFrame(scrollToAnchor);
+
+      return () => cancelAnimationFrame(frame);
+    }
+
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
   }, [pathname, hash]);
 
   return null;
+}
+
+const pageVariants = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -20 },
+};
+
+function AnimatedRoutes() {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={location.pathname}
+        variants={pageVariants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <Routes location={location}>
+          <Route path="/" element={<Home />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/events/:slug" element={<EventDetails />} />
+          <Route path="/team" element={<Team />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/apply" element={<Apply />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </motion.div>
+    </AnimatePresence>
+  );
 }
 
 export default function App() {
@@ -33,15 +89,7 @@ export default function App() {
       <ScrollToTop />
       <Navbar />
       <main id="main-content" className="flex-1">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/events/:slug" element={<EventDetails />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/apply" element={<Apply />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <AnimatedRoutes />
       </main>
       <Footer />
     </div>
