@@ -62,8 +62,8 @@ export default function Hero() {
           className="flex flex-col gap-6 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between"
         >
           <div className="flex flex-wrap gap-4">
-            <Button href={site.links.apply}>Join WiOS</Button>
-            <Button href="/projects" variant="secondary" external={false}>
+            <Button href={site.links.apply} className="cursor-lock">Join WiOS</Button>
+            <Button href="/projects" variant="secondary" external={false} className="cursor-lock">
               Explore open source
             </Button>
           </div>

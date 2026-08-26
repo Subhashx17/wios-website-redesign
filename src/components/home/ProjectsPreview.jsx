@@ -96,7 +96,7 @@ export default function ProjectsPreview() {
         </div>
 
         <div className="mt-8">
-          <Button href="/projects" variant="ghost" external={false}>
+          <Button href="/projects" variant="ghost" external={false} className="cursor-lock">
             All projects
           </Button>
         </div>

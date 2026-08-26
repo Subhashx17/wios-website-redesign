@@ -40,7 +40,7 @@ export default function Apply() {
           </p>
 
           <Reveal delay={0.1} className="mt-10 flex flex-wrap gap-4">
-            <Button href={site.links.apply}>Open the application form</Button>
+            <Button href={site.links.apply} className="cursor-lock">Open the application form</Button>
             <Button href={site.links.discord} variant="secondary">
               <span className="flex items-center gap-2">
                 <MessageCircle size={16} /> Join the Discord

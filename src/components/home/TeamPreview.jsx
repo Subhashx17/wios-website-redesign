@@ -18,7 +18,7 @@ export default function TeamPreview() {
             description="A small rotating team keeps WiOS running each year — meet the people behind this year's chapter."
           />
           <Reveal delay={0.15}>
-            <Button href="/team" variant="secondary" external={false} className="shrink-0">
+            <Button href="/team" variant="secondary" external={false} className="shrink-0 cursor-lock">
               Meet the full team
             </Button>
           </Reveal>
