@@ -23,50 +23,35 @@ export const team = [
   {
     group: 'Admins',
     members: [
-      { name: 'Anusha Thalivarathil', role: 'President', image: null, github: null, linkedin: null },
-      { name: 'Ankitha Velagala', role: 'Chairperson', image: null, github: null, linkedin: 'https://www.linkedin.com/in/bhanu-saravana-ankitha-v-9aa21724a' },
-      { name: 'Chirag Jain', role: 'Vice President', image: null, github: null, linkedin: 'https://www.linkedin.com/in/chiragajain/' },
-      { name: 'Jacklen James', role: 'Director', image: null, github: null, linkedin: 'https://www.linkedin.com/in/jacklen-james-289a82251' },
-      { name: 'Shambhavi Gunda', role: 'Treasurer', image: null, github: null, linkedin: 'https://www.linkedin.com/in/shambhavi-gunda/' },
+      { name: 'Malika Farah Shaik', role: 'President', image: null, github: null, linkedin: null },
+      { name: 'Suhita Nayak', role: 'Chairperson', image: null, github: null, linkedin: null },
+      { name: 'Arina', role: 'Vice President', image: null, github: null, linkedin: null },
+      { name: 'Kanishka V S', role: 'Director', image: null, github: null, linkedin: null },
+      { name: 'Shambhavi Gunda', role: 'Treasurer', image: null, github: null, linkedin: null },
     ],
   },
   {
     group: 'Technical Team',
     members: [
-      { name: 'Aakash Gaike', role: 'Technical Lead', image: null, github: null, linkedin: null },
-      { name: 'Arnav Gupta', role: 'Associate Technical Lead', image: null, github: null, linkedin: null },
-      { name: 'Saket Rathore', role: 'Web Developer', image: null, github: null, linkedin: 'https://www.linkedin.com/in/saketrathore/' },
-      { name: 'Aditya Gupta', role: 'Web Developer', image: null, github: null, linkedin: 'https://www.linkedin.com/in/aditya-guptax/' },
-      { name: 'B Tharuni Sri Sai', role: 'Technical Developer', image: null, github: null, linkedin: 'https://www.linkedin.com/in/tharunibalukuri' },
-      { name: 'Shrinidhi Ganesan', role: 'Technical Developer', image: null, github: null, linkedin: 'https://www.linkedin.com/in/shrinidhi-ganesan-ba31362a8' },
-      { name: 'Yashika Gaur', role: 'Technical Developer', image: null, github: null, linkedin: 'http://www.linkedin.com/in/yashika-gaur-0962ba2b8' },
-      { name: 'Anju Singh', role: 'Project Developer', image: null, github: null, linkedin: 'https://www.linkedin.com/in/anjusinghn' },
-      { name: 'Kathrina Elangbam', role: 'Project Developer', image: null, github: null, linkedin: 'https://in.linkedin.com/in/kathrina-elangbam-03b6692b3' },
-      { name: 'Mevania Alexander', role: 'Project Developer', image: null, github: null, linkedin: 'https://www.linkedin.com/in/mevania-alexander-97197a301/' },
+      { name: 'Anushka Maitra', role: 'Technical Lead', image: null, github: null, linkedin: null },
     ],
   },
   {
     group: 'Event Management',
     members: [
-      { name: 'Labdhi Jain', role: 'Event Manager', image: null, github: null, linkedin: null },
-      { name: 'Manvika Polavarapu', role: 'Event Manager', image: null, github: null, linkedin: 'https://www.linkedin.com/in/manvika-polavarapu-416582291' },
+      { name: 'Pragnitaa', role: 'Event Manager', image: null, github: null, linkedin: null },
     ],
   },
   {
     group: 'Creative',
     members: [
-      { name: 'Divya Sree Alam', role: 'Creative Lead', image: null, github: null, linkedin: 'https://www.linkedin.com/in/divya-sree-alam-942318301' },
-      { name: 'Asmita Chakraborty', role: 'Associate Creative Lead', image: null, github: null, linkedin: 'https://www.linkedin.com/in/asmita-chakraborty-4b19132a1/' },
-      { name: 'Moningi Vainavi', role: 'Graphic Designer', image: null, github: null, linkedin: 'https://www.linkedin.com/in/vainavi-moningi-060086300' },
-      { name: 'B Vaadyuthi', role: 'Video Editor', image: null, github: null, linkedin: null },
-      { name: 'Gandrala Rishika', role: 'Video Editor', image: null, github: null, linkedin: null },
+      { name: 'Snigdha', role: 'Graphic Designer', image: null, github: null, linkedin: null },
     ],
   },
   {
     group: 'Marketing',
     members: [
-      { name: 'Harshith Reddy', role: 'Marketing Lead', image: null, github: null, linkedin: 'http://www.linkedin.com/in/harshithreddyakepati' },
-      { name: 'Tannu Yadav', role: 'Associate Marketing Lead', image: null, github: null, linkedin: 'https://www.linkedin.com/in/tannu-yadav-06012733a' },
+      { name: 'Melvyn Sebastian', role: 'Social Media & Marketing Lead', image: null, github: null, linkedin: null },
     ],
   },
 ];
