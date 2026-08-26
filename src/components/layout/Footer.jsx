@@ -35,7 +35,7 @@ export default function Footer() {
           </p>
           <a
             href={`mailto:${site.email}`}
-            className="w-fit border-b border-transparent font-mono text-sm text-paper/70 transition-colors hover:border-signal hover:text-paper"
+            className="cursor-lock w-fit border-b border-transparent font-mono text-sm text-paper/70 transition-colors hover:border-signal hover:text-paper"
           >
             {site.email}
           </a>
