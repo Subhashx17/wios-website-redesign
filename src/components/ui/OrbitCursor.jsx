@@ -5,6 +5,8 @@ export default function OrbitCursor() {
 
   useEffect(() => {
     const cursor = cursorRef.current;
+    if (!cursor) return;
+
     const pointerQuery = window.matchMedia('(pointer: fine)');
     const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     let targetX = -100;
@@ -22,6 +24,7 @@ export default function OrbitCursor() {
       currentY += (targetY - currentY) * 0.22;
       currentWidth += (targetWidth - currentWidth) * 0.22;
       currentHeight += (targetHeight - currentHeight) * 0.22;
+      
       cursor.style.transform = `translate3d(${currentX - currentWidth / 2}px, ${currentY - currentHeight / 2}px, 0)`;
       cursor.style.width = `${currentWidth}px`;
       cursor.style.height = `${currentHeight}px`;
@@ -31,12 +34,16 @@ export default function OrbitCursor() {
     const updateCursor = (event) => {
       if (!pointerQuery.matches || motionQuery.matches) return;
 
-      const target = event.target instanceof Element ? event.target.closest('.cursor-lock') : null;
+      // 🎯 MODIFIED LINE: Checks for .cursor-lock OR [data-cursor="box"] OR .cursor-box
+      const target = event.target instanceof Element 
+        ? event.target.closest('.cursor-lock, [data-cursor="box"], .cursor-box') 
+        : null;
 
       if (target) {
         const bounds = target.getBoundingClientRect();
         targetX = bounds.left + bounds.width / 2;
         targetY = bounds.top + bounds.height / 2;
+        // Expands around the box with a padding offset
         targetWidth = bounds.width + 12;
         targetHeight = bounds.height + 10;
       } else {
