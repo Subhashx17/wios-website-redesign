@@ -28,7 +28,7 @@ export default function Team() {
 
       <section className="border-b border-line">
         <div className="container-editorial py-16 md:py-20">
-          <Reveal className="flex flex-col gap-6 border border-line p-8 sm:flex-row sm:items-center md:p-10">
+          <Reveal className="cursor-lock flex flex-col gap-6 border border-line p-8 sm:flex-row sm:items-center md:p-10">
             <Avatar src={coordinator.image} name={coordinator.name} size={72} />
             <div>
               <TechnicalLabel className="mb-2 block">Faculty Coordinator</TechnicalLabel>

@@ -8,7 +8,7 @@ import Avatar from '../ui/Avatar.jsx';
  */
 export default function TeamRow({ member }) {
   return (
-    <div className="group grid grid-cols-[1fr_auto] items-center gap-4 border-b border-line py-5 transition-colors hover:bg-paper/[0.02] sm:grid-cols-[10rem_1fr_auto] sm:gap-6 sm:py-6">
+    <div className="cursor-lock group grid grid-cols-[1fr_auto] items-center gap-4 border-b border-line py-5 transition-colors hover:bg-paper/[0.02] sm:grid-cols-[10rem_1fr_auto] sm:gap-6 sm:py-6">
       <span className="font-mono text-xs uppercase tracking-wide text-paper/40 sm:text-sm">
         {member.role}
       </span>

@@ -91,12 +91,12 @@ export default function Projects() {
               or open an issue on GitHub.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href={site.links.github}>
+              <Button href={site.links.github} className="cursor-lock">
                 <span className="flex items-center gap-2">
                   <Github size={16} /> WiOS on GitHub
                 </span>
               </Button>
-              <Button href={site.links.discord} variant="secondary">
+              <Button href={site.links.discord} variant="secondary" className="cursor-lock">
                 Ask on Discord
               </Button>
             </div>

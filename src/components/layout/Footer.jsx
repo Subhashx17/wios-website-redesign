@@ -26,7 +26,7 @@ export default function Footer() {
     <footer className="border-t border-line bg-ink/85">
       <div className="container-editorial grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr] md:py-20">
         <div className="flex flex-col gap-4">
-          <Link to="/" className="font-mono text-base font-medium text-paper">
+          <Link to="/" className="cursor-lock font-mono text-base font-medium text-paper">
             <span className="text-signal">/</span>WiOS
           </Link>
           <p className="max-w-xs text-sm leading-relaxed text-paper/50">
@@ -47,11 +47,11 @@ export default function Footer() {
             {nav.map((item) => (
               <li key={item.label}>
                 {item.to.startsWith('/#') ? (
-                  <a href={item.to} className="text-sm text-paper/60 transition-colors hover:text-paper">
+                  <a href={item.to} className="text-sm text-paper/60 transition-colors hover:text-paper cursor-lock">
                     {item.label}
                   </a>
                 ) : (
-                  <Link to={item.to} className="text-sm text-paper/60 transition-colors hover:text-paper">
+                  <Link to={item.to} className="text-sm text-paper/60 transition-colors hover:text-paper cursor-lock">
                     {item.label}
                   </Link>
                 )}
@@ -69,7 +69,7 @@ export default function Footer() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm text-paper/60 transition-colors hover:text-paper"
+                  className=" cursor-lock flex items-center gap-2 text-sm text-paper/60 transition-colors hover:text-paper"
                 >
                   <Icon size={14} aria-hidden="true" />
                   {label}
@@ -80,7 +80,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="container-editorial flex flex-col-reverse items-center justify-between gap-4 border-t border-line py-6 text-xs text-paper/40 sm:flex-row">
+      <div className="cursor-lock container-editorial flex flex-col-reverse items-center justify-between gap-4 border-t border-line py-6 text-xs text-paper/40 sm:flex-row">
         <p>© {year} Women in Open Source, {site.university}.</p>
         <p className="font-mono">Built &amp; maintained by the WiOS Technical Team.</p>
       </div>

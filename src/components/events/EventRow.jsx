@@ -17,7 +17,7 @@ export default function EventRow({ event }) {
   return (
     <Link
       to={`/events/${event.slug}`}
-      className="group grid grid-cols-[auto_1fr_auto] items-center gap-4 border-b border-line py-6 transition-colors hover:bg-paper/[0.02] sm:grid-cols-[5rem_auto_1fr_auto] sm:gap-6 sm:py-7"
+      className="group cursor-lock grid grid-cols-[auto_1fr_auto] items-center gap-4 border-b border-line py-6 transition-colors hover:bg-paper/[0.02] sm:grid-cols-[5rem_auto_1fr_auto] sm:gap-6 sm:py-7"
     >
       <span className="font-mono text-xs text-paper/40 sm:text-sm">{formatDate(event.date)}</span>
 
