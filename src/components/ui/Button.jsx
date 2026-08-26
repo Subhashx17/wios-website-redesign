@@ -1,4 +1,5 @@
 import { forwardRef } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 
 const variants = {
@@ -36,13 +37,37 @@ const Button = forwardRef(function Button(
   );
 
   if (href) {
-    const externalProps = external ? { target: '_blank', rel: 'noopener noreferrer' } : {};
+  const isInternal = href.startsWith('/') && !external;
+
+  if (isInternal) {
     return (
-      <a href={href} ref={ref} className={classes} {...externalProps} {...props}>
+      <Link
+        to={href}
+        ref={ref}
+        className={classes}
+        {...props}
+      >
         {content}
-      </a>
+      </Link>
     );
   }
+
+  const externalProps = external
+    ? { target: '_blank', rel: 'noopener noreferrer' }
+    : {};
+
+  return (
+    <a
+      href={href}
+      ref={ref}
+      className={classes}
+      {...externalProps}
+      {...props}
+    >
+      {content}
+    </a>
+  );
+}
 
   return (
     <button ref={ref} className={classes} {...props}>

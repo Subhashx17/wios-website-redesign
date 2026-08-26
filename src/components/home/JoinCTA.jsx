@@ -26,8 +26,8 @@ export default function JoinCTA() {
           </p>
         </Reveal>
         <Reveal delay={0.18} className="flex flex-wrap gap-4">
-          <Button href={site.links.apply}>Apply to join</Button>
-          <Button href={site.links.discord} variant="secondary">
+          <Button href={site.links.apply} className="cursor-lock">Apply to join</Button>
+          <Button href={site.links.discord} variant="secondary" className="cursor-lock">
             Say hi on Discord
           </Button>
         </Reveal>

@@ -18,7 +18,7 @@ export default function EventsPreview() {
             description="Talks, hackathons, and workshops going back to 2021 — the record of what WiOS has actually done."
           />
           <Reveal delay={0.15}>
-            <Button href="/events" variant="secondary" external={false} className="shrink-0">
+            <Button href="/events" variant="secondary" external={false} className="shrink-0 cursor-lock">
               View all events
             </Button>
           </Reveal>

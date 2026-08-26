@@ -63,7 +63,7 @@ export default function WhatWeDo() {
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? -1 : i)}
                   aria-expanded={isOpen}
-                  className="group flex w-full flex-col gap-4 border-b border-line py-6 text-left focus-visible:outline-2 focus-visible:outline-signal sm:flex-row sm:items-center sm:gap-8 sm:py-7"
+                  className="group cursor-lock flex w-full flex-col gap-4 border-b border-line py-6 text-left focus-visible:outline-2 focus-visible:outline-signal sm:flex-row sm:items-center sm:gap-8 sm:py-7"
                 >
                   <span className="font-mono text-sm text-paper/40 sm:w-12">
                     {String(i + 1).padStart(2, '0')}
