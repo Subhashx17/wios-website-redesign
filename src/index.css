@@ -72,6 +72,139 @@
   }
 }
 
+/* Custom cursor: four rotating brackets orbit a fixed centre point. */
+@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  html,
+  body,
+  body * {
+    cursor: none !important;
+  }
+
+  .orbit-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 36px;
+    height: 36px;
+    margin: 0;
+    pointer-events: none;
+    opacity: 0;
+    scale: 1;
+    transition: opacity 160ms ease;
+    will-change: transform;
+  }
+
+  .orbit-cursor[data-visible='true'] {
+    opacity: 1;
+  }
+
+  .orbit-cursor__edge {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-color: #f6f3ee;
+    border-style: solid;
+    border-width: 3px 0 0 3px;
+    animation: orbit-cursor-spin 2.4s linear infinite;
+  }
+
+  .orbit-cursor__edge--top {
+    top: 0;
+    left: 50%;
+    margin-left: -6px;
+    transform: rotate(45deg);
+  }
+
+  .orbit-cursor__edge--right {
+    top: 50%;
+    right: 0;
+    margin-top: -6px;
+    transform: rotate(135deg);
+  }
+
+  .orbit-cursor__edge--bottom {
+    bottom: 0;
+    left: 50%;
+    margin-left: -6px;
+    transform: rotate(225deg);
+  }
+
+  .orbit-cursor__edge--left {
+    top: 50%;
+    left: 0;
+    margin-top: -6px;
+    transform: rotate(315deg);
+  }
+
+  .orbit-cursor__dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #f6f3ee;
+    transform: translate(-50%, -50%);
+    animation: orbit-cursor-pulse 1.8s ease-in-out infinite;
+  }
+
+  .orbit-cursor[data-locked='true'] .orbit-cursor__dot {
+    opacity: 0;
+  }
+
+  .orbit-cursor[data-locked='true'] .orbit-cursor__edge {
+    animation: none;
+  }
+
+  .orbit-cursor[data-locked='true'] .orbit-cursor__edge--top {
+    top: 0;
+    left: 0;
+    margin: -2px;
+    transform: rotate(0deg);
+  }
+
+  .orbit-cursor[data-locked='true'] .orbit-cursor__edge--right {
+    top: 0;
+    right: 0;
+    margin: -2px;
+    transform: rotate(90deg);
+  }
+
+  .orbit-cursor[data-locked='true'] .orbit-cursor__edge--bottom {
+    bottom: 0;
+    left: auto;
+    right: 0;
+    margin: -2px;
+    transform: rotate(180deg);
+  }
+
+  .orbit-cursor[data-locked='true'] .orbit-cursor__edge--left {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    margin: -2px;
+    transform: rotate(270deg);
+  }
+
+  @keyframes orbit-cursor-spin {
+    from {
+      rotate: 0deg;
+    }
+
+    to {
+      rotate: 360deg;
+    }
+  }
+
+  @keyframes orbit-cursor-pulse {
+    50% {
+      scale: 1.45;
+      opacity: 0.65;
+    }
+  }
+}
+
 /* Respect motion preferences globally */
 @media (prefers-reduced-motion: reduce) {
   *,

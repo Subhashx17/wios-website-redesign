@@ -9,7 +9,10 @@ import EventDetails from './pages/EventDetails.jsx';
 import Team from './pages/Team.jsx';
 import Projects from './pages/Projects.jsx';
 import Apply from './pages/Apply.jsx';
+import Contact from './pages/Contact.jsx';
 import NotFound from './pages/NotFound.jsx';
+import OrbitCursor from './components/ui/OrbitCursor.jsx';
+import ReactiveGrid from './components/ui/ReactiveGrid.jsx';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -70,6 +73,7 @@ function AnimatedRoutes() {
           <Route path="/team" element={<Team />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/apply" element={<Apply />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </motion.div>
@@ -80,6 +84,8 @@ function AnimatedRoutes() {
 export default function App() {
   return (
     <div className="flex min-h-screen flex-col bg-ink">
+      <ReactiveGrid />
+      <OrbitCursor />
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:bg-signal focus:px-4 focus:py-2 focus:text-ink"
@@ -88,10 +94,12 @@ export default function App() {
       </a>
       <ScrollToTop />
       <Navbar />
-      <main id="main-content" className="flex-1">
+      <main id="main-content" className="relative z-10 flex-1">
         <AnimatedRoutes />
       </main>
-      <Footer />
+      <div className="relative z-10">
+        <Footer />
+      </div>
     </div>
   );
 }

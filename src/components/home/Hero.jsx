@@ -50,7 +50,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-sm text-balance text-base leading-relaxed text-paper/60 md:text-lg"
           >
-            {site.tagline} We're the open-source and community club of {site.university} — closing
+            {site.tagline} We&apos;re the open-source and community club of {site.university} — closing
             the gender gap in tech through workshops, hackathons, and real contributions.
           </motion.p>
         </div>

@@ -12,17 +12,18 @@ const social = [
 
 const nav = [
   { label: 'About', to: '/#about' },
-  { label: 'Events', to: '/events' },
+  { label: 'Events', to: '/#events' },
   { label: 'Open Source', to: '/projects' },
   { label: 'Team', to: '/team' },
   { label: 'Join', to: '/apply' },
+  { label: 'Contact', to: '/contact' },
 ];
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-line bg-ink">
+    <footer className="border-t border-line bg-ink/85">
       <div className="container-editorial grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr] md:py-20">
         <div className="flex flex-col gap-4">
           <Link to="/" className="font-mono text-base font-medium text-paper">

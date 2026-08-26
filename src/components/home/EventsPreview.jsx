@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import SectionHeader from '../ui/SectionHeader.jsx';
 import Reveal from '../ui/Reveal.jsx';
 import EventRow from '../events/EventRow.jsx';
@@ -9,7 +8,7 @@ const recent = events.slice(0, 5);
 
 export default function EventsPreview() {
   return (
-    <section className="border-b border-line">
+    <section id="events" className="scroll-mt-20 border-b border-line">
       <div className="container-editorial py-24 md:py-32">
         <div className="mb-14 flex flex-col gap-8 md:mb-20 md:flex-row md:items-end md:justify-between">
           <SectionHeader

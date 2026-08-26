@@ -10,7 +10,7 @@ export default function ProjectsPreview() {
   const { projects } = useGithubRepos();
 
   return (
-    <section id="open-source" className="border-b border-line bg-ink-soft">
+    <section id="open-source" className="border-b border-line bg-ink-soft/85">
       <div className="container-editorial py-24 md:py-32">
         <div className="mb-14 md:mb-20">
           <SectionHeader
