@@ -34,16 +34,15 @@ export default function OrbitCursor() {
     const updateCursor = (event) => {
       if (!pointerQuery.matches || motionQuery.matches) return;
 
-      // 🎯 MODIFIED LINE: Checks for .cursor-lock OR [data-cursor="box"] OR .cursor-box
-      const target = event.target instanceof Element 
-        ? event.target.closest('.cursor-lock, [data-cursor="box"], .cursor-box') 
+      const target = event.target instanceof Element
+        ? event.target.closest('.cursor-lock')
         : null;
 
       if (target) {
         const bounds = target.getBoundingClientRect();
+
         targetX = bounds.left + bounds.width / 2;
         targetY = bounds.top + bounds.height / 2;
-        // Expands around the box with a padding offset
         targetWidth = bounds.width + 12;
         targetHeight = bounds.height + 10;
       } else {
@@ -57,6 +56,27 @@ export default function OrbitCursor() {
       cursor.dataset.locked = String(Boolean(target));
     };
 
+    const handleScroll = () => {
+      if (!pointerQuery.matches || motionQuery.matches) return;
+
+      const x = currentX;
+      const y = currentY;
+
+      const element = document.elementFromPoint(x, y);
+
+      const target = element instanceof Element
+        ? element.closest('.cursor-lock')
+        : null;
+
+      if (!target) {
+        targetX = x;
+        targetY = y;
+        targetWidth = 36;
+        targetHeight = 36;
+        cursor.dataset.locked = 'false';
+      }
+    };
+
     const hideCursor = () => {
       cursor.dataset.visible = 'false';
       cursor.dataset.locked = 'false';
@@ -67,6 +87,7 @@ export default function OrbitCursor() {
     };
 
     window.addEventListener('pointermove', updateCursor);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     document.documentElement.addEventListener('mouseleave', hideCursor);
     pointerQuery.addEventListener('change', updateCapability);
     motionQuery.addEventListener('change', updateCapability);
@@ -74,6 +95,7 @@ export default function OrbitCursor() {
 
     return () => {
       window.removeEventListener('pointermove', updateCursor);
+      window.removeEventListener('scroll', handleScroll);
       document.documentElement.removeEventListener('mouseleave', hideCursor);
       pointerQuery.removeEventListener('change', updateCapability);
       motionQuery.removeEventListener('change', updateCapability);

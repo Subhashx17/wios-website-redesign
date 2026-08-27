@@ -14,7 +14,7 @@ export default function TeamPreview() {
           <SectionHeader
             index="06"
             eyebrow="Team"
-            title="Run by students, for students."
+            title="Run by students, for the students."
             description="A small rotating team keeps WiOS running each year — meet the people behind this year's chapter."
           />
           <Reveal delay={0.15}>
